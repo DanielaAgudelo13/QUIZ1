@@ -36,13 +36,13 @@ public class Control {
 			switch (tipo) {
 
 			case "Cuadrado":
-				Cuadrado cuadrado = new Cuadrado(posX, posY, tamano, valor, direccion, direccion, true, app);
+				Cuadrado cuadrado = new Cuadrado(posX, posY, tamano, valor, direccion, direccion, false, app);
 				this.figuras.add(cuadrado);
 
 				break;
 
 			case "Circulo":
-				Circulo circulo = new Circulo(posX, posY, tamano, valor, direccion, direccion, true, app);
+				Circulo circulo = new Circulo(posX, posY, tamano, valor, direccion, direccion, false, app);
 				this.figuras.add(circulo);
 
 				break;
@@ -71,10 +71,18 @@ public class Control {
 					int random = (int) app.random(50, 201);
 
 					figuras.add(new Triangulo(figuraI.getPosX(), figuraI.getPosY(), random,
-							figuraI.getValor() + figuraJ.getValor(), figuraI.getDirX(), figuraI.getDirY(), true, app));
+							figuraI.getValor() + figuraJ.getValor(), figuraI.getDirX(), figuraI.getDirY(), false, app));
 					figuras.remove(j);
 					figuras.remove(i);
 				}
+			}
+		}
+	}
+	
+	public void detener() {
+		for (int i = 0; i < figuras.size(); i++) {
+			if(app.dist(app.mouseX, app.mouseY, ((Figura) figuras.get(i)).getPosX(), ((Figura) figuras.get(i)).getPosY()) < ((Figura) figuras.get(i)).getTamano() / 2) {
+				((Figura) figuras.get(i)).setQuieto(true);
 			}
 		}
 	}

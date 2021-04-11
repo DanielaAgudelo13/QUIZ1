@@ -3,42 +3,43 @@ package modelo;
 import processing.core.PApplet;
 
 public abstract class Figura {
-	
-		int posX;
-		int posY; 
-		int tamano;
-		int valor;
-		int dirX;
-		int dirY; 
-		boolean quieto;
-		PApplet app;
-		
-	public Figura (int posX, int posY, int tamano, int valor, int dirX, int dirY, boolean quieto, PApplet app) {
-		
-		this.posX = posX; 
-		this.posY = posY; 
+
+	int posX;
+	int posY;
+	int tamano;
+	int valor;
+	int dirX;
+	int dirY;
+	boolean quieto;
+	PApplet app;
+
+	public Figura(int posX, int posY, int tamano, int valor, int dirX, int dirY, boolean quieto, PApplet app) {
+
+		this.posX = posX;
+		this.posY = posY;
 		this.tamano = tamano;
 		this.valor = valor;
 		this.dirX = dirX;
 		this.dirY = dirY;
 		this.quieto = quieto;
-		this.app = app; 
-	
+		this.app = app;
+
 	}
-	  
-	public abstract void pintar ();
-	
-	public void mover () {
-		posX += 2*dirX;
-		posY += 2*dirY;
-		if (posX <=0 || posX >=700) {
-			this.dirX *=-1;
-		}
-		if (posY <=0 || posY >=700) {
-			this.dirY *=-1;
+
+	public abstract void pintar();
+
+	public void mover() {
+		if (!quieto) {
+			posX += 2 * dirX;
+			posY += 2 * dirY;
+			if (posX <= 0 || posX >= 700) {
+				this.dirX *= -1;
+			}
+			if (posY <= 0 || posY >= 700) {
+				this.dirY *= -1;
+			}
 		}
 	}
-	
 
 	public int getPosX() {
 		return posX;
@@ -95,6 +96,5 @@ public abstract class Figura {
 	public void setQuieto(boolean quieto) {
 		this.quieto = quieto;
 	}
-	
-	
+
 }
