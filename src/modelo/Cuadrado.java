@@ -12,6 +12,7 @@ public class Cuadrado extends Figura {
 	@Override
 	public void pintar() {
 		app.fill(0,0,155);
+		app.rectMode(app.CENTER);
 		app.rect(posX, posY, tamano, tamano);
 		
 	}
