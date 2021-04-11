@@ -1,9 +1,10 @@
 package vista;
 
+import control.Control;
 import processing.core.PApplet;
 
 public class Main extends PApplet {
-	
+	Control control;
 
 	public static void main(String[] args) {
 		PApplet.main("vista.Main");
@@ -15,11 +16,12 @@ public class Main extends PApplet {
 	}
 	
 	public void setup ()  {
-		
+		control = new Control (this);
 	}
 	
 	public void draw () {
 		background (255);
+		control.test();
 	}
 	
 }
