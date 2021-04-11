@@ -66,14 +66,13 @@ public class Control {
 				Figura figuraJ = (Figura) figuras.get(j);
 
 				if (figuraI instanceof Circulo && figuraJ instanceof Cuadrado && app.dist(figuraI.getPosX(),
-						figuraI.getPosY(), figuraJ.getPosX(), figuraJ.getPosY()) <= figuraI.getTamano() / 2) {
+						figuraI.getPosY(), figuraJ.getPosX(), figuraJ.getPosY()) <= figuraJ.getTamano() / 2) {
 
 					int random = (int) app.random(50, 201);
 
 					figuras.add(new Triangulo(figuraI.getPosX(), figuraI.getPosY(), random,
 							figuraI.getValor() + figuraJ.getValor(), figuraI.getDirX(), figuraI.getDirY(), true, app));
-					figuras.remove(i);
-					figuras.remove(j);
+
 				}
 			}
 		}

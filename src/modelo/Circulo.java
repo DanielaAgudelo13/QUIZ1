@@ -13,6 +13,10 @@ public class Circulo extends Figura {
 	public void pintar() {
 		app.fill(0,155,0);
 		app.ellipse(posX, posY, tamano, tamano);
+		app.fill(255);
+		app.textAlign(app.CENTER, app.CENTER);
+		app.textSize(tamano - tamano / 2);
+		app.text(valor, posX, posY);
 		
 	}
 

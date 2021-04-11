@@ -12,8 +12,11 @@ public class Triangulo extends Figura {
 	@Override
 	public void pintar() {
 		app.fill(255,0,0);
-		app.triangle(posX, posY, posX+50, posY-80, posX+100, posY);
-		
+		app.triangle(posX, posY, posX + tamano / 2, posY - tamano, posX + tamano, posY);
+		app.fill(255);
+		app.textAlign(app.CENTER, app.CENTER);
+		app.textSize(tamano - tamano / 2);
+		app.text(valor, posX + tamano /2 , posY - tamano / 2);
 	}
 	
 
