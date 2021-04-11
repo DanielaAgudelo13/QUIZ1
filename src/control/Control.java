@@ -52,4 +52,21 @@ public class Control {
 			}
 		}
 	}
+	
+	public void pintar () {
+		for (int i = 0; i < figuras.size();i ++) {
+			((Figura) figuras.get(i)).pintar();
+			
+		}
+	}
+
+	public ArrayList getFiguras() {
+		return figuras;
+	}
+
+	public void setFiguras(ArrayList figuras) {
+		this.figuras = figuras;
+	}
+	
+		
 }

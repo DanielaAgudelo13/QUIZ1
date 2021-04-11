@@ -11,7 +11,7 @@ public class Circulo extends Figura {
 
 	@Override
 	public void pintar() {
-		app.fill(0,0,155);
+		app.fill(0,155,0);
 		app.ellipse(posX, posY, tamano, tamano);
 		
 	}

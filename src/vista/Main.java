@@ -17,11 +17,14 @@ public class Main extends PApplet {
 	
 	public void setup ()  {
 		control = new Control (this);
+		control.cargarObjeto();
 	}
 	
 	public void draw () {
 		background (255);
-		control.test();
+		control.pintar();
+		
+		
 	}
 	
 }
