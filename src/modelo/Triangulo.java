@@ -15,7 +15,7 @@ public class Triangulo extends Figura {
 		app.triangle(posX, posY, posX + tamano / 2, posY - tamano, posX + tamano, posY);
 		app.fill(255);
 		app.textAlign(app.CENTER, app.CENTER);
-		app.textSize(tamano - tamano / 2);
+		app.textSize(tamano - tamano / 2 - 20);
 		app.text(valor, posX + tamano /2 , posY - tamano / 2);
 	}
 	

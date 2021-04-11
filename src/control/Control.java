@@ -72,7 +72,8 @@ public class Control {
 
 					figuras.add(new Triangulo(figuraI.getPosX(), figuraI.getPosY(), random,
 							figuraI.getValor() + figuraJ.getValor(), figuraI.getDirX(), figuraI.getDirY(), true, app));
-
+					figuras.remove(j);
+					figuras.remove(i);
 				}
 			}
 		}
