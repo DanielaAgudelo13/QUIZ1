@@ -15,13 +15,6 @@ public class Cuadrado extends Figura {
 		app.rect(posX, posY, tamano, tamano);
 		
 	}
-
-	@Override
-	public void mover() {
-		
-		
-	}
-
 	
 
 }

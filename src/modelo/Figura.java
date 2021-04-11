@@ -28,7 +28,17 @@ public abstract class Figura {
 	  
 	public abstract void pintar ();
 	
-	public abstract void mover (); 
+	public void mover () {
+		posX += 5*dirX;
+		posY += 5*dirY;
+		if (posX <=0 || posX >=700) {
+			this.dirX *=-1;
+		}
+		if (posY <=0 || posY >=700) {
+			this.dirY *=-1;
+		}
+	}
+	
 
 	public int getPosX() {
 		return posX;

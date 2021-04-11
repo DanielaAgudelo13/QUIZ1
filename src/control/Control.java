@@ -56,6 +56,7 @@ public class Control {
 	public void pintar () {
 		for (int i = 0; i < figuras.size();i ++) {
 			((Figura) figuras.get(i)).pintar();
+			((Figura) figuras.get(i)).mover();
 			
 		}
 	}

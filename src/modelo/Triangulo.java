@@ -15,12 +15,6 @@ public class Triangulo extends Figura {
 		app.triangle(posX, posY, posX+50, posY-80, posX+100, posY);
 		
 	}
-
-	@Override
-	public void mover() {
-		
-		
-	}
 	
 
 
