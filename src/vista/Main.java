@@ -29,6 +29,7 @@ public class Main extends PApplet {
 	
 	public void mousePressed() {
 		control.detener();
+		control.crearObjeto();
 	}
 	
 }

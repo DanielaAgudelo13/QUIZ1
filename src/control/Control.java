@@ -78,11 +78,35 @@ public class Control {
 			}
 		}
 	}
-	
+
 	public void detener() {
 		for (int i = 0; i < figuras.size(); i++) {
-			if(app.dist(app.mouseX, app.mouseY, ((Figura) figuras.get(i)).getPosX(), ((Figura) figuras.get(i)).getPosY()) < ((Figura) figuras.get(i)).getTamano() / 2) {
-				((Figura) figuras.get(i)).setQuieto(true);
+			if (app.dist(app.mouseX, app.mouseY, ((Figura) figuras.get(i)).getPosX(),
+					((Figura) figuras.get(i)).getPosY()) < ((Figura) figuras.get(i)).getTamano() / 2) {
+				if (((Figura) figuras.get(i)).isQuieto()) {
+					((Figura) figuras.get(i)).setQuieto(false);
+				} else {
+					((Figura) figuras.get(i)).setQuieto(true);
+				}
+			}
+		}
+	}
+
+	public void crearObjeto() {
+		if (app.mousePressed && (app.mouseButton == app.RIGHT)) {
+			int random = (int) app.random(0, 2);
+			int randomPosX = (int) app.random(2, 699);
+			int randomPosY = (int) app.random(2, 699);
+			int randomTam = (int) app.random(50, 201);
+			int randomValue = (int) app.random(1, 21);
+
+			switch (random) {
+			case 0:
+				figuras.add(new Circulo(randomPosX, randomPosY, randomTam, randomValue, 1, -1, false, app));
+				break;
+			case 1:
+				figuras.add(new Cuadrado(randomPosX, randomPosY, randomTam ,randomValue, 1, -1, false, app));
+				break;
 			}
 		}
 	}
