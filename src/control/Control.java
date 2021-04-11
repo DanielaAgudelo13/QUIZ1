@@ -61,12 +61,13 @@ public class Control {
 
 	public void chocar() {
 		for (int i = 0; i < figuras.size(); i++) {
+			Figura figuraI = (Figura) figuras.get(i);
 			for (int j = 0; j < figuras.size(); j++) {
-				Figura figuraI = (Figura) figuras.get(i);
+				
 				Figura figuraJ = (Figura) figuras.get(j);
 
 				if (figuraI instanceof Circulo && figuraJ instanceof Cuadrado && app.dist(figuraI.getPosX(),
-						figuraI.getPosY(), figuraJ.getPosX(), figuraJ.getPosY()) <= figuraJ.getTamano() / 2) {
+						figuraI.getPosY(), figuraJ.getPosX(), figuraJ.getPosY()) <= figuraI.getTamano()) {
 
 					int random = (int) app.random(50, 201);
 
@@ -93,7 +94,7 @@ public class Control {
 	}
 
 	public void crearObjeto() {
-		if (app.mousePressed && (app.mouseButton == app.RIGHT)) {
+		if (app.mouseButton == app.RIGHT) {
 			int random = (int) app.random(0, 2);
 			int randomPosX = (int) app.random(2, 699);
 			int randomPosY = (int) app.random(2, 699);
